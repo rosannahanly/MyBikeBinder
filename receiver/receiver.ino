@@ -1,6 +1,8 @@
 #include <RH_ASK.h>
 #include <SPI.h> // Not actualy used but needed to compile
- 
+// Code uses modified fragments of the following examples
+//https://create.arduino.cc/projecthub/Arduino_Genuino/doorbell-36646c
+//https://www.arduinolab.net/rf-434mhz-ask-transmitter-and-receiver/ 
 // tx/rx configuration
 int i;
 const int txSpeed = 2000;
