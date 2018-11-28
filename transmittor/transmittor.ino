@@ -14,7 +14,7 @@ int piezo_Pin= 0;
 int LED_Pin= 13;
 
 //Set the threshold levels
-int threshold= 1000;
+int threshold= 700;
 
  
 RH_ASK driver(txSpeed, rxPin, txPin, pttPin);
