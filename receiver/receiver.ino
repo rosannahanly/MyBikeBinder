@@ -2,6 +2,7 @@
 #include <SPI.h> // Not actualy used but needed to compile
  
 // tx/rx configuration
+int i;
 const int txSpeed = 2000;
 const int rxPin = 5;
 const int txPin = 6;
@@ -24,11 +25,16 @@ void loop()
   uint8_t buflen = sizeof(buf);
  
   if (driver.recv(buf, &buflen)) // if message received, save it
-  {
-      tone(buzzer, 440);
-      delay(1000);
-      tone(buzzer, 880);// Send 1KHz sound signal...
-      delay(1000);  
+  {   
+    for(int i=0;i<80;i++){
+      tone(buzzer, 1200);
+      delay(150);
+      tone(buzzer, 1800);
+      delay(150);
+      tone(buzzer, 800);// Send 1KHz sound signal...
+      delay(150);}
+      noTone(buzzer);  
     Serial.println((char*)buf); // print received message
+//    driver.recv(buf, &buflen)==false;
   }
 }
